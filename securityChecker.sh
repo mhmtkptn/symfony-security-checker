@@ -2,7 +2,7 @@
 
 #==============================================================================
 
-#TITLE:            securityCheck.sh
+#TITLE:            securityChecker.sh
 #DESCRIPTION:      Symfony console'u kullanarak composer ile kullanılan paketlerin guvenlik kontrollerini yapar
 #AUTHOR:           mhmtkptn
 #CRON:             0 2 * * * /bin/bash /script-path/securityChecker.sh >/dev/null 2>&1
@@ -34,7 +34,7 @@ function run () {
 function checkPrivilage () {
 
     if [ ! -x "$baseDir"/"$scriptName" ]; then
-        echo -e "Lutfen root olarak scripti çalıştırın !!! \n Security Check Process ended" >> "$logFilePath"
+        echo -e "Script executable değil !!! \n Security Check Process ended" >> "$logFilePath"
         exit 1
     fi
 }
